@@ -1,0 +1,30 @@
+//assignment 2
+using System;  
+using System.Collections.Generic;
+using System.Linq;
+  
+public class DictionaryExample  
+{  
+    public static void Main(string[] args)  
+    {  
+        Dictionary<string, int> names = new Dictionary<string, int>();  
+        names.Add("Atal Bihari Vajpayee",1998);  
+        names.Add("Narendra Modi",2014);  
+        names.Add("Manmohan Singh",2004);
+        //string key =KeyByValue(names,2004);
+       //Console.WriteLine(key);
+       foreach (KeyValuePair<string, int> kv in names)  
+        {  
+            //Console.WriteLine(kv.Key+" "+kv.Value); 
+            if (kv.Value==2004)
+            {
+                Console.WriteLine(kv.Key);
+            }
+        }
+        names.Add("Narendra modi",2022);
+        foreach (KeyValuePair<string, int> kv in names.OrderBy(key=> key.Value))  
+        {  
+            Console.WriteLine(kv.Key+" "+kv.Value);  
+        }  
+    }  
+    }  
